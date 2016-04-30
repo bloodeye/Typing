@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Typing"
+        xmlns:Metro="clr-namespace:DevComponents.WPF.Metro;assembly=DevComponents.WPF.Metro" x:Class="Typing.Select_Excercise"
+        mc:Ignorable="d"
+        Title="Select_Excercise" Height="192.746" Width="725.907" WindowStyle="ToolWindow">
+    <Grid Margin="0,0,0,54">
+
+
+        <Metro:MetroTile x:Name="metroTile1" Content="Dễ" HorizontalAlignment="Left" Height="42" Margin="26,92,0,-37" VerticalAlignment="Top" Width="182" Click="Easy_Click"/>
+        <Metro:MetroTile x:Name="metroTile2" Content="Trung Bình" HorizontalAlignment="Left" Height="42" Margin="530,92,0,-37" VerticalAlignment="Top" Width="182"/>
+        <Metro:MetroTile x:Name="metroTile3" Content="Khó" HorizontalAlignment="Left" Height="42" Margin="277,92,0,-37" VerticalAlignment="Top" Width="182"/>
+        <Label x:Name="label" Content="Chọn Độ Khó" HorizontalAlignment="Left" Height="58" Margin="277,10,0,0" VerticalAlignment="Top" Width="178" Foreground="Red" FontSize="26.667"/>
+
+    </Grid>
+</Window>

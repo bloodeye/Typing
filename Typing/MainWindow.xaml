@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Typing"
+        xmlns:Metro="clr-namespace:DevComponents.WPF.Metro;assembly=DevComponents.WPF.Metro" xmlns:WpfSchedule="clr-namespace:DevComponents.WpfSchedule;assembly=DevComponents.WpfSchedule" x:Class="Typing.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="1024" WindowStyle="None" ResizeMode="NoResize">
+    <Grid Background="White">
+
+        <Image x:Name="My_Galaxy_S4_Wallpaper_HD_Simple_38_jpg" Margin="0,0,0,0" Source="Picture/My-Galaxy-S4-Wallpaper-HD-Simple_38.jpg" Stretch="Fill"/>
+
+        <Metro:MetroTile x:Name="metroTile" Content="Hướng Dẫn" HorizontalAlignment="Left" Margin="795,99,0,0" VerticalAlignment="Top" Click="Intro_Click" FontSize="48" FontFamily="Tahoma" Height="46" Background="#FFF16875"/>
+        <Metro:MetroTile x:Name="Change_User" Content="Đổi tài khoản" HorizontalAlignment="Left" Margin="28,111,0,0" VerticalAlignment="Top" Height="34" Width="124" FontFamily="Tahoma" Click="Change_User_Click" Background="#FFF16875"/>
+        <TextBlock x:Name="Username" HorizontalAlignment="Left" Height="50" Margin="28,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" OpacityMask="#FFDA1212" FontSize="33.333" FontFamily="Tahoma" Background="#FFDCC9C9" Opacity="0.5"/>
+        <Metro:MetroTile x:Name="metroTile2" Content="Thông tin" HorizontalAlignment="Left" Height="34" Margin="265,111,0,0" VerticalAlignment="Top" Width="180" Background="#FFF79A9A" FontFamily="Tahoma"/>
+        <Metro:MetroTile x:Name="metroTile3" Content="Quit" HorizontalAlignment="Left" Height="39" Margin="28,553,0,40" VerticalAlignment="Center" Width="70" Click="metroTile3_Click" Background="#FFF16875"/>
+        <Metro:MetroTile x:Name="metroTile4" Content="Luyện Tập" HorizontalAlignment="Left" Height="40" Margin="795,227,0,0" VerticalAlignment="Top" Background="#FFF16875" Click="Exercise_click"/>
+        <Metro:MetroTile x:Name="metroTile5" Content="Thư Giãn" HorizontalAlignment="Left" Height="40" Margin="795,336,0,0" VerticalAlignment="Top" Background="#FFF16875" Click="metroTile5_Click"/>
+        <Metro:MetroTile x:Name="metroTile6" Content="About" HorizontalAlignment="Left" Height="40" Margin="795,439,0,0" VerticalAlignment="Top" Background="#FFF16875"/>
+
+    </Grid>
+</Window>

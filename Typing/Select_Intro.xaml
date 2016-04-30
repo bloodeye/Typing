@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Typing"
+        xmlns:Metro="clr-namespace:DevComponents.WPF.Metro;assembly=DevComponents.WPF.Metro" x:Class="Typing.Select_Intro"
+        mc:Ignorable="d"
+        Title="" Height="190.273" Width="800.518" WindowStyle="None" Background="{x:Null}" ResizeMode="NoResize" FontSize="8" ShowInTaskbar="False">
+    <Grid Margin="-78,-37,-78,0">
+        <Image x:Name="simple_pink_background_by_yeoshinim_d6evm4y_png" Margin="68,37,-68,0" Source="simple_pink_background_by_yeoshinim-d6evm4y.png" Stretch="Fill"/>
+
+        <Metro:MetroTile x:Name="metroTile1" Content="Tutorial" HorizontalAlignment="Left" Height="42" Margin="105,113,0,0" VerticalAlignment="Top" Width="185" Background="#FFF16875"/>
+        <Metro:MetroTile x:Name="metroTile2" Content="Thao Tác Phím" HorizontalAlignment="Left" Height="42" Margin="666,113,0,0" VerticalAlignment="Top" Width="185" Background="#FFF16875"/>
+        <Metro:MetroTile x:Name="metroTile3" Content="Bài Tập Cơ Bản" HorizontalAlignment="Left" Height="42" Margin="395,116,0,0" VerticalAlignment="Top" Width="185" Background="#FFF16875"/>
+        <Label x:Name="label" Content="Chọn Hướng Dẫn Bắt Đầu" HorizontalAlignment="Left" Height="44" Margin="330,67,0,0" VerticalAlignment="Top" Width="313" Foreground="#FF872A2A" FontSize="26.667" FontFamily="Asisl"/>
+        <Button x:Name="button" Content="X" HorizontalAlignment="Left" Height="25" Margin="844,32,0,0" VerticalAlignment="Top" Width="36" Background="#FFF16875" Foreground="White" BorderBrush="{x:Null}" Click="button_Click"/>
+
+    </Grid>
+</Window>
