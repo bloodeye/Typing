@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Typing"
         xmlns:Metro="clr-namespace:DevComponents.WPF.Metro;assembly=DevComponents.WPF.Metro" xmlns:WpfSchedule="clr-namespace:DevComponents.WpfSchedule;assembly=DevComponents.WpfSchedule" x:Class="Typing.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="1024" WindowStyle="None" ResizeMode="NoResize">
+        Title="MainWindow" Height="640" Width="1024" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid Background="White">
 
         <Image x:Name="My_Galaxy_S4_Wallpaper_HD_Simple_38_jpg" Margin="0,0,0,0" Source="Picture/My-Galaxy-S4-Wallpaper-HD-Simple_38.jpg" Stretch="Fill"/>
