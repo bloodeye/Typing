@@ -26,6 +26,7 @@ namespace Typing
 
         private void metroTile_Click(object sender, RoutedEventArgs e)
         {
+            new Game_Screen().Show();
             this.Close();
         }
     }

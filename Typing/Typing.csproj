@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Game_Screen.xaml.cs">
+      <DependentUpon>Game_Screen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Select_Excercise.xaml.cs">
       <DependentUpon>Select_Excercise.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,10 @@
     <Compile Include="UserChange.xaml.cs">
       <DependentUpon>UserChange.xaml</DependentUpon>
     </Compile>
+    <Page Include="Game_Screen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

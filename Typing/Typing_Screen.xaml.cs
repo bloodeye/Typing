@@ -19,14 +19,18 @@ namespace Typing
     /// </summary>
     public partial class Typing_Screen : Window
     {
+        string s = "bla bla bla bla!";
         public Typing_Screen()
         {
             InitializeComponent();
+            textBox.Text = s;
+            
         }
 
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
+        }     
     }
+
 }
