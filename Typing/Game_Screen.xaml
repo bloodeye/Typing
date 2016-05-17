@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="Game_Screen" Height="768" Width="1024">
     <Window.Resources>
-        <TextBlock x:Key="word" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="238" FontFamily="Tamaho" FontSize="40" FontWeight="Bold"/>
+        <TextBlock x:Key="word" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="238" FontFamily="Tamaho" FontSize="40" FontWeight="Bold" Background="Blue"/>
 
     </Window.Resources>
     <Grid>
 
         <TextBlock x:Name="game_clock" HorizontalAlignment="Left" Height="48" Margin="850,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="166" FontFamily="Tamaho" FontSize="40"/>
-        <TextBlock x:Name="word_block" HorizontalAlignment="Left" Height="56" Margin="214,131,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="238" FontFamily="Tamaho" FontSize="40" FontWeight="Bold"/>
+       
     
     </Grid>
 </Window>

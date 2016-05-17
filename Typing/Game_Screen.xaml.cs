@@ -22,22 +22,28 @@ namespace Typing
     public partial class Game_Screen : Window
     {
         //khai bao bien
-        public const int time_limit = 10;
+        public const int time_limit = 20;
         public delegate void UpdateTextBackCall( TextBlock obj,string text);
         public delegate void UpdatePostionBackCall(TextBlock obj,int W, int H);
-        public delegate void RemoveObjBackCall(object obj);
-        public delegate void GetTextBlockBackCall(object obj);
+        public delegate void GetTextBlockBackCall(TextBlock obj);
+        public delegate void ResizeTextBlockBackCall(TextBlock obj);
         //ket thuc khai bao bien
 
         public Game_Screen()
         {
             InitializeComponent();
             Thread clock = new Thread(clock_event);
-            clock.Start();
+            
             Thread word = new Thread(game_run);
             word.SetApartmentState(ApartmentState.STA);
             word.Start();
-
+            clock.Start();
+            TextBlock a = new TextBlock();
+            a = (TextBlock)this.Resources["word"];
+            a.Text = "abc";
+            UpdatePosition(a, 50, 50);
+            a.ActualHeight.Equals(56);
+            a.ActualWidth.Equals(56);
             //TextBlock a = (TextBlock) this.Resources["word"];
             //a.Text = "abc";
         }
@@ -97,10 +103,16 @@ namespace Typing
             obj.Margin = temp;
         }
 
-        public void GetTextBlock(object obj)
+        public void GetTextBlock(TextBlock obj)
         {
             obj = (TextBlock)this.Resources["word"];
+            obj.Dispatcher.Invoke(new ResizeTextBlockBackCall(this.ResizeTextBlock), new object[] { obj });
         }
-        
+
+        public void ResizeTextBlock(TextBlock obj)
+        {
+            obj.Measure(new Size(56, 56));
+        }
+
     }
 }
