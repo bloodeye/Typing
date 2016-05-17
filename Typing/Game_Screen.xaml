@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:Typing"
         mc:Ignorable="d"
         Title="Game_Screen" Height="768" Width="1024">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="104*"/>
-            <ColumnDefinition Width="23*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="game_clock" HorizontalAlignment="Left" Height="48" Margin="8,43,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="166" FontFamily="Tamaho" FontSize="40" Grid.Column="1"/>
-        <TextBlock x:Name="word_block" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="182" FontFamily="Tamaho" FontSize="40"/>
+    <Window.Resources>
+        <TextBlock x:Key="word" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="238" FontFamily="Tamaho" FontSize="40" FontWeight="Bold"/>
 
+    </Window.Resources>
+    <Grid>
+
+        <TextBlock x:Name="game_clock" HorizontalAlignment="Left" Height="48" Margin="850,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="166" FontFamily="Tamaho" FontSize="40"/>
+        <TextBlock x:Name="word_block" HorizontalAlignment="Left" Height="56" Margin="214,131,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="238" FontFamily="Tamaho" FontSize="40" FontWeight="Bold"/>
+    
     </Grid>
 </Window>

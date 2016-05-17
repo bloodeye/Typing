@@ -22,11 +22,11 @@ namespace Typing
     public partial class Game_Screen : Window
     {
         //khai bao bien
-        public const int time_limit = 30;
-        public delegate void UpdateTextBackCall(string clock);
-        public delegate void UpdatePostionBackCall(int W, int H);
+        public const int time_limit = 10;
+        public delegate void UpdateTextBackCall( TextBlock obj,string text);
+        public delegate void UpdatePostionBackCall(TextBlock obj,int W, int H);
         public delegate void RemoveObjBackCall(object obj);
-
+        public delegate void GetTextBlockBackCall(object obj);
         //ket thuc khai bao bien
 
         public Game_Screen()
@@ -34,15 +34,12 @@ namespace Typing
             InitializeComponent();
             Thread clock = new Thread(clock_event);
             clock.Start();
-            //Thread word = new Thread(game_run);
-            //word.Start();
+            Thread word = new Thread(game_run);
+            word.SetApartmentState(ApartmentState.STA);
+            word.Start();
 
-            while (true)
-            {
-                new Thread(game_run).Start();
-                Thread.Sleep(1000);
-            }
-
+            //TextBlock a = (TextBlock) this.Resources["word"];
+            //a.Text = "abc";
         }
 
         public void game_run()
@@ -50,56 +47,59 @@ namespace Typing
            
             int iword = (new Random().Next(97, 122));
             char a = (char)iword;
-            TextBlock obj = word_block;
+            TextBlock obj = new TextBlock();
             //word_block.Dispatcher.Invoke(new UpdateTextBackCall(this.UpdateWord), new object[] { a.ToString() });
             //iword = (new Random().Next(0, 500));
             //a = (char)iword;
 
-            obj.Dispatcher.Invoke(new UpdateTextBackCall(this.UpdateWord), new object[] { a.ToString() });
+            //viet chu cho word_block
+            obj.Dispatcher.Invoke(new GetTextBlockBackCall(this.GetTextBlock), new object[] { obj });
+
+            obj.Dispatcher.Invoke(new UpdateTextBackCall(this.UpdateWord), new object[] { obj,a.ToString()});
 
 
-            iword = (new Random().Next(0, 500));
+            iword = (new Random().Next(0, 550));
             for (int i = 0; i < 35; i++)
             {
                 //word_block.Dispatcher.Invoke(new UpdatePostionBackCall(this.UpdatePosition), new object[] {iword , i*20});
-                obj.Dispatcher.Invoke(new UpdatePostionBackCall(this.UpdatePosition), new object[] { iword + 100, i * 20 });
+                obj.Dispatcher.Invoke(new UpdatePostionBackCall(this.UpdatePosition), new object[] { obj,iword, i * 20 });
 
                 Thread.Sleep(100);
 
             }
-            this.Dispatcher.Invoke(new RemoveObjBackCall(this.Removeobj), new object[] { obj });
+
         }
 
         public void clock_event()
         {
             for (int i = 0; i < time_limit; i++)
             {
-                game_clock.Dispatcher.Invoke(new UpdateTextBackCall(this.UpdateClock), new object[] { i.ToString() });
+                game_clock.Dispatcher.Invoke(new UpdateTextBackCall(this.UpdateClock), new object[] { game_clock,(i+1).ToString() });
                 Thread.Sleep(1000);
             }
             MessageBox.Show("End Game!");
         }
 
-        public void UpdateWord(string word)
+        public void UpdateWord(TextBlock obj,string word)
         {
-            word_block.Text = word;
+            obj.Text = word;
         }
-        public void UpdateClock(string clock)
+        public void UpdateClock(TextBlock obj,string clock)
         {
-            game_clock.Text = clock;
-        }
-
-        public void UpdatePosition(int W, int H)
-        {
-            Thickness obj = word_block.Margin;
-            obj.Left = W;
-            obj.Top = H;
-            word_block.Margin = obj;
+            obj.Text = clock;
         }
 
-        public void Removeobj(object obj)
+        public void UpdatePosition(TextBlock obj,int W, int H)
         {
-            obj = null;
+            Thickness temp = obj.Margin;
+            temp.Left = W;
+            temp.Top = H;
+            obj.Margin = temp;
+        }
+
+        public void GetTextBlock(object obj)
+        {
+            obj = (TextBlock)this.Resources["word"];
         }
         
     }
