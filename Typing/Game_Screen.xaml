@@ -6,14 +6,85 @@
         xmlns:local="clr-namespace:Typing"
         mc:Ignorable="d"
         Title="Game_Screen" Height="768" Width="1024">
-    <Window.Resources>
-        <TextBlock x:Key="word" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="238" FontFamily="Tamaho" FontSize="40" FontWeight="Bold" Background="Blue"/>
-
-    </Window.Resources>
     <Grid>
 
         <TextBlock x:Name="game_clock" HorizontalAlignment="Left" Height="48" Margin="850,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="166" FontFamily="Tamaho" FontSize="40"/>
-       
-    
+        <RichTextBox x:Name="word1" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word2" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word3" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word4" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word5" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word6" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word7" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word8" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word9" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word10" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word11" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word12" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word13" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word14" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox x:Name="word15" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+
     </Grid>
 </Window>
