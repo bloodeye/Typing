@@ -23,25 +23,28 @@ namespace Typing
     {
         //khai bao bien
         bool flag = true;
+        int inword=-1;
         public const int time_limit = 20;
         public delegate void UpdateTextBackCall(TextBlock obj, string s);
         public delegate void UpdateBackCall();
+        public delegate void UpdateWordBackCall(RichTextBox obj);
         List<RichTextBox> words = new List<RichTextBox>();
         List<string> lib = new List<string>();
         int[] pos = new int[15];
-
+        string back = "";
+        string front = "";
+        string btw;
+        RichTextBox flag_word;
+        int error, cbt;
         //ket thuc khai bao bien
 
         public Game_Screen()
         {
-            char iword;
 
             InitializeComponent();
-            for (int i = 97; i < 122; i++)
-            {
-                iword = (char)i;
-                lib.Add(iword.ToString());
-            }
+            lib.Add("FUCK YOU");
+            lib.Add("HELL NO");
+            lib.Add("AMAZING HAHA");
 
             makePlaceWords();
             Thread clock = new Thread(clock_event);
@@ -106,7 +109,7 @@ namespace Typing
         public void setWord(RichTextBox obj)
         {
             TextRange txt = new TextRange(obj.Document.ContentEnd, obj.Document.ContentEnd);
-            txt.Text = lib[new Random().Next(0,lib.Count - 1)];
+            txt.Text = lib[new Random().Next(0,lib.Count)];
             obj.Margin = new Thickness(new Random().Next(0, 500), 0, 0, 0);
 
         }
@@ -142,6 +145,85 @@ namespace Typing
                     break;
                 }
             }
+        }
+
+        private void event_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (inword == -1)
+            {
+                btw = "";
+                string text_word;
+                foreach (RichTextBox word in words)
+                {
+                    text_word = new TextRange(word.Document.ContentStart, word.Document.ContentEnd).Text;
+                    inword++;
+                    if (e.Key.ToString()[0] == text_word[0])
+                    {                        
+                        flag_word = word;
+                        back = text_word;
+                        btw  += back[1];                        
+                        front += back[0];
+                        back = back.Remove(0, 2);
+                        cbt++;
+                        Dispatcher.Invoke(new UpdateWordBackCall(this.UpdateWord), flag_word);
+                        break;
+                    }
+                }
+            }
+            else if (back == "")
+            {
+                if (e.Key.ToString()[0] == btw[0] || (e.Key == Key.Space && (int)btw[0] == 32))
+                {
+                    front += btw;
+                    btw = btw.Remove(0, 1);
+                    cbt++;
+                    Dispatcher.Invoke(new UpdateWordBackCall(this.UpdateWord), flag_word);
+                    front = "";
+                    flag_word.IsEnabled.Equals(false);
+                    pos[inword] = 0;
+                    inword = -1;
+                }
+                else
+                {
+                    cbt++;
+                    error++;
+                }
+            } else
+            {
+                if (e.Key.ToString()[0] == btw[0] || (e.Key == Key.Space && (int)btw[0] == 32))
+                {
+                    front += btw;
+                    btw = btw.Remove(0, 1);
+                    btw += back[0];
+                    back = back.Remove(0, 1);
+                    cbt++;
+                    Dispatcher.Invoke(new UpdateWordBackCall(this.UpdateWord), flag_word);
+                }
+                else
+                {
+                    cbt++;
+                    error++;
+                }
+            }
+        }
+
+        public void UpdateWord(RichTextBox obj)
+        {
+            obj.SelectAll();
+            obj.Selection.Text = "";
+
+            TextRange txt_front = new TextRange(obj.Document.ContentEnd, obj.Document.ContentEnd);
+            txt_front.Text = front;
+            txt_front.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
+
+            TextRange txt_btw = new TextRange(obj.Document.ContentEnd, obj.Document.ContentEnd);
+            txt_btw.Text = btw.ToString();
+            txt_btw.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Blue);
+
+            TextRange txt_back = new TextRange(obj.Document.ContentEnd, obj.Document.ContentEnd);
+            txt_back.Text = back;
+            txt_back.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
+            txt_back.ApplyPropertyValue(TextElement.BackgroundProperty, null);
         }
     }
 }

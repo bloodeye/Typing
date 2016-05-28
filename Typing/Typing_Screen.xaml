@@ -6,11 +6,15 @@
         xmlns:local="clr-namespace:Typing"
         xmlns:Metro="clr-namespace:DevComponents.WPF.Metro;assembly=DevComponents.WPF.Metro" x:Class="Typing.Typing_Screen"
         mc:Ignorable="d"
-        Title="Typing_Screen" Height="640" Width="1024" WindowStyle="None">
+        Title="Typing_Screen" Height="640" Width="1024" WindowStyle="None" KeyDown="event_KeyDown" KeyUp="event_KeyUp">
     <Grid>
- 
-        <Metro:MetroTile x:Name="metroTile" Content="Menu" HorizontalAlignment="Left" Height="60" Margin="842,532,-4,0" VerticalAlignment="Top" Width="164" Click="Menu_Click" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="332" Margin="104,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="722" IsReadOnly="True" FontFamily="Tamaho" FontSize="30" FontWeight="Bold"/>
+
+        <Metro:MetroTile x:Name="metroTile" Content="Menu" HorizontalAlignment="Left" Height="60" Margin="828,528,0,0" VerticalAlignment="Top" Width="164" Click="Menu_Click"/>
+        <RichTextBox x:Name="words_box" HorizontalAlignment="Left" Height="436" Margin="36,34,0,0" VerticalAlignment="Top" Width="782" FontFamily="Tamaho" FontSize="40" KeyDown="event_KeyDown" IsReadOnly="True">
+            <FlowDocument>
+                
+            </FlowDocument>
+        </RichTextBox>
 
     </Grid>
 </Window>

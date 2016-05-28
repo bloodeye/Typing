@@ -62,5 +62,10 @@ namespace Typing
             Select_Game game = new Select_Game();
             game.Show();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show(e.Key.ToString());
+        }
     }
 }
