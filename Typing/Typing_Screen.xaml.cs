@@ -27,13 +27,12 @@ namespace Typing
         char p_word;
         bool shift_down = false;
 
-
         public Typing_Screen()
         {
             
             InitializeComponent();
             TextRange txt = new TextRange(words_box.Document.ContentEnd, words_box.Document.ContentEnd);
-            txt.Text = "The neck pencils the predictable continental near the caffeine. The ashcan injures the recommended music. The antidote earns the attempt beside an unread gnome. The vegetarian compensates a trade past a creative moderate. A hidden professional cracks.";
+            txt.Text = "The neck pencils the predictable continental near the caffeine.";
             back = new TextRange(words_box.Document.ContentStart, words_box.Document.ContentEnd).Text;
             btw = back[0];
             back = back.Remove(0, 1);
@@ -135,6 +134,11 @@ namespace Typing
                     error++;
                 }
             }
+            if (back.Length == 1)
+            {
+                MessageBox.Show("Endgame!");
+                this.Close();
+            }
         }
 
         public void GetKey_nums()
@@ -218,6 +222,11 @@ namespace Typing
                     error++;
                 }
             }
+            if (back.Length == 1)
+            {
+                MessageBox.Show("Endgame!");
+                this.Close();
+            }
         }
         private void event_KeyUp(object sender, KeyEventArgs e)
         {
@@ -251,6 +260,8 @@ namespace Typing
             txt_back.Text = back;
             txt_back.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
             txt_back.ApplyPropertyValue(TextElement.BackgroundProperty, null);
+
+            
         }
 
     }

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Typing"
         mc:Ignorable="d"
-        Title="Game_Screen" Height="768" Width="1024" KeyDown="event_KeyDown">
+        Title="Game_Screen" Height="768" Width="1024" KeyDown="event_KeyDown" KeyUp="event_KeyUp">
     <Grid>
 
-        <TextBlock x:Name="game_clock" HorizontalAlignment="Left" Height="48" Margin="850,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="166" FontFamily="Tamaho" FontSize="40" TextDecorations="Underline"/>
+        <TextBlock x:Name="game_clock" HorizontalAlignment="Left" Height="48" Margin="850,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="166" FontFamily="Tamaho" FontSize="40" TextDecorations="Underline" />
         <RichTextBox x:Name="word1" HorizontalAlignment="Left" Height="56" Margin="0,0,0,0" VerticalAlignment="Top" Width="256" BorderBrush="{x:Null}" Background="{x:Null}">
             <FlowDocument>
                 <Paragraph></Paragraph>
@@ -84,6 +84,7 @@
                 <Paragraph></Paragraph>
             </FlowDocument>
         </RichTextBox>
+        <TextBlock x:Name="score" HorizontalAlignment="Left" Margin="818,165,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="60" Width="188" FontSize="40" FontFamily="Tamaho"/>
 
 
     </Grid>
